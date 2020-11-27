@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.HumiMapper">
+    <resultMap id="HumiResultMap" type="com.example.demo.pojo.sensor.Humi" >
+        <result column="humi1" property="humi1" />
+        <result column="humi2" property="humi2" />
+        <result column="humi3" property="humi3" />
+        <result column="humi4" property="humi4" />
+        <result column="humi5" property="humi5" />
+        <result column="humi6" property="humi6" />
+        <result column="humi7" property="humi7" />
+        <result column="door" property="door" />
+        <result column="time" property="time" />
+    </resultMap>
+    <select id="findByTime" resultMap="HumiResultMap">
+        select * from humidity where time = #{time}
+    </select>
+    <select id="findAll" resultMap="HumiResultMap">
+        select * from humidity
+    </select>
+    <update id="updateDoor">
+        update humidity set door= #{door} where time = #{time}
+    </update>
+    <update id="updateByTimeAndNum">
+        <if test="num==1">
+            update humidity set humi1=#{humi} where time = #{time}
+        </if>
+        <if test="num==2">
+            update humidity set humi2=#{humi} where time = #{time}
+        </if>
+        <if test="num==3">
+            update humidity set humi3=#{humi} where time = #{time}
+        </if>
+        <if test="num==4">
+            update humidity set humi4=#{humi} where time = #{time}
+        </if>
+        <if test="num==5">
+            update humidity set humi5=#{humi} where time = #{time}
+        </if>
+        <if test="num==6">
+            update humidity set humi6=#{humi} where time = #{time}
+        </if>
+        <if test="num==7">
+            update humidity set humi7=#{humi} where time = #{time}
+        </if>
+    </update>
+</mapper>

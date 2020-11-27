@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.KindthMapper">
+    <resultMap id="KindthResultMap" type="com.example.demo.pojo.Kindth" >
+        <result column="kinds" property="kinds" />
+        <result column="tempd" property="tempd" />
+        <result column="tempu" property="tempu" />
+        <result column="humid" property="humid" />
+        <result column="humiu" property="humiu" />
+    </resultMap>
+    <select id="findByKinds" resultMap="KindthResultMap">
+        select * from kindth where kinds = #{kinds}
+    </select>
+</mapper>

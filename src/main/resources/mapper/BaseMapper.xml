@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.BaseMapper">
+    <resultMap id="BaseMap" type="com.example.demo.pojo.Order" >
+        <result column="uid" property="uid" />
+        <result column="carid" property="carid" />
+        <result column="create_time" property="createTime"/>
+        <result column="current_order" property="currentOrder"/>
+        <result column="start_time" property="startTime"/>
+        <result column="stop_time" property="stopTime"/>
+    </resultMap>
+    <insert id="addNewOrder" parameterType="com.example.demo.pojo.Order">
+        insert into base (carid, create_time, current_order) values (#{carid}, #{createTime},1)
+    </insert>
+    <select id="findLastestOrder" resultMap="BaseMap">
+        select * from base where uid = (select max(uid) from base);
+    </select>
+    <select id="findByUid" parameterType="long" resultType="int">
+        select current_order from base where uid = #{uid};
+    </select>
+    <update id="finishOrder" parameterType="com.example.demo.pojo.Order">
+        update base set current_order = #{current_order} where uid = #{uid}
+    </update>
+    <insert id="updateStartTime" parameterType="com.example.demo.pojo.Order">
+        update base set start_time  = #{start_time} where uid= (select max(uid) from base);
+    </insert>
+    <insert id="updateStopTime" parameterType="com.example.demo.pojo.Order">
+        update base set stop_time  = #{stop_time} where uid= (select max(uid) from base);
+    </insert>
+</mapper>

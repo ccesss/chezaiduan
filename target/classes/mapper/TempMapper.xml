@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.TempMapper">
+    <resultMap id="TempResultMap" type="com.example.demo.pojo.sensor.Temp" >
+        <result column="temp1" property="temp1" />
+        <result column="temp2" property="temp2" />
+        <result column="temp3" property="temp3" />
+        <result column="temp4" property="temp4" />
+        <result column="temp5" property="temp5" />
+        <result column="temp6" property="temp6" />
+        <result column="temp7" property="temp7" />
+        <result column="time" property="time" />
+    </resultMap>
+    <select id="findByTime" resultMap="TempResultMap">
+        select * from thermometer where time = #{time}
+    </select>
+    <select id="findAll" resultMap="TempResultMap">
+        select * from thermometer
+    </select>
+    <update id="updateByTimeAndNum">
+        <if test="num==1">
+            update thermometer set temp1 = #{temp} where time = #{time}
+        </if>
+        <if test="num==2">
+            update thermometer set temp2 = #{temp} where time = #{time}
+        </if>
+        <if test="num==3">
+            update thermometer set temp3 = #{temp} where time = #{time}
+        </if>
+        <if test="num==4">
+            update thermometer set temp4 = #{temp} where time = #{time}
+        </if>
+        <if test="num==5">
+            update thermometer set temp5 = #{temp} where time = #{time}
+        </if>
+        <if test="num==6">
+            update thermometer set temp6 = #{temp} where time = #{time}
+        </if>
+        <if test="num==7">
+            update thermometer set temp7 = #{temp} where time = #{time}
+        </if>
+    </update>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.DriverMapper">
+    <resultMap id="DriverResultMap" type="com.example.demo.pojo.Driver" >
+        <result column="name" property="name" />
+        <result column="driveyear" property="driveyear" />
+        <result column="drivelv" property="drivelv" />
+        <result column="num" property="num" />
+        <result column="face_token" property="face_token" />
+    </resultMap>
+    <select id="findByNum" resultMap="DriverResultMap">
+        select * from driver where num = #{num}
+    </select>
+</mapper>

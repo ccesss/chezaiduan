@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.GoodMapper">
+    <resultMap id="GoodResultMap" type="com.example.demo.pojo.Good" >
+        <result column="kinds" property="kinds" />
+        <result column="pweight" property="pweight" />
+        <result column="loadtime" property="loadtime" />
+        <result column="startpls" property="startpls" />
+        <result column="destpls" property="destpls" />
+        <result column="time" property="time" />
+    </resultMap>
+    <select id="findByTime" resultMap="GoodResultMap">
+        select * from good where time = #{time}
+    </select>
+</mapper>
