@@ -1,8 +1,5 @@
 package com.example.demo.result;
 
-import com.example.demo.pojo.Good;
-import com.example.demo.pojo.Kindth;
-
 public class GoodResult {
 
     String kinds;
@@ -14,20 +11,20 @@ public class GoodResult {
 
     int code;
 
-    public GoodResult(Good good, Kindth kindth){
-        this.kinds = good.getKinds();
-        this.pweight = good.getPweight();
-        this.tempd = kindth.getTempd();
-        this.tempu = kindth.getTempu();
-        this.humid = kindth.getHumid();
-        this.humiu = kindth.getHumiu();
-
-        this.loadtime = good.getLoadtime();
-        this.startpls = good.getStartpls();
-        this.destpls = good.getDestpls();
-
-        this.code = 200;
-    }
+//    public GoodResult(Good good, Kindth kindth){
+//        this.kinds = good.getKinds();
+//        this.pweight = good.getPweight();
+//        this.tempd = kindth.getTempd();
+//        this.tempu = kindth.getTempu();
+//        this.humid = kindth.getHumid();
+//        this.humiu = kindth.getHumiu();
+//
+//        this.loadtime = good.getLoadtime();
+//        this.startpls = good.getStartpls();
+//        this.destpls = good.getDestpls();
+//
+//        this.code = 200;
+//    }
 
     public int getCode() {
         return code;

@@ -1,10 +1,12 @@
 package com.example.demo.server;
 
+import com.example.demo.mapper.DriverMapper;
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.net.ssl.SSLException;
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -18,6 +20,7 @@ import java.util.Random;
 
 @Service
 public class FaceServer {
+
 
     public int faceppDetect(String imgBase64, String face_token){
 

@@ -3,16 +3,7 @@ package com.example.demo.pojo;
 //读取串口
 
 import com.example.demo.mapper.GpsMapper;
-import gnu.io.CommPortIdentifier;
-import gnu.io.PortInUseException;
-import gnu.io.SerialPort;
-import gnu.io.SerialPortEvent;
-import gnu.io.SerialPortEventListener;
-import gnu.io.UnsupportedCommOperationException;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import gnu.io.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -43,7 +34,7 @@ public class SerialPortUtils implements SerialPortEventListener {
     private String dataHex;
     //GNRMC子串
     private String GNRMC;
-    @Autowired
+    @Resource
     private GpsMapper gpsMapper;
     /**
      //

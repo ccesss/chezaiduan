@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class latAndLon {
+
     private  String lat;
     private  String lon;
     private  String ns;

@@ -11,6 +11,7 @@
         <result column="ns" property="ns"/>
         <result column="carid" property="carid"/>
 
+
     </resultMap>
     <select id="findGpsNow" resultMap="GpsMap">
         select * from gps

@@ -4,7 +4,7 @@ package com.example.demo.controller;
 import com.example.demo.mapper.*;
 import com.example.demo.pojo.Driver;
 import com.example.demo.pojo.FaceBase64;
-import com.example.demo.pojo.Good;
+import com.example.demo.pojo.GoodOrder;
 import com.example.demo.pojo.User;
 import com.example.demo.pojo.sensor.Humi;
 import com.example.demo.pojo.sensor.Temp;
@@ -24,7 +24,7 @@ public class indexController {
     @Resource
     DriverMapper driverMapper;
     @Resource
-    GoodMapper goodMapper;
+    GoodOrderMapper goodOrderMapper;
     @Resource
     TempMapper tempMapper;
     @Resource
@@ -49,12 +49,12 @@ public class indexController {
 
         System.out.println(tempdr.getFace_token());
 
-        Good tempgd = goodMapper.findByTime("1");
+        GoodOrder goodOrder = goodOrderMapper.findByTime("1");
         Temp temptp = tempMapper.findByTime("1");
         Humi temphm = humiMapper.findByTime("1");
 
 
-        return new indexResult(temptp,temphm,tempgd.getKinds(),tempdr);
+        return new indexResult(temptp,temphm,goodOrder.getGoodKind(),tempdr);
     }
 
 
