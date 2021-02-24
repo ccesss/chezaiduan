@@ -8,7 +8,7 @@ import com.example.demo.pojo.FaceBase64;
 import com.example.demo.pojo.User;
 import com.example.demo.result.FaceResult;
 import com.example.demo.server.FaceServer;
-import com.sun.deploy.net.HttpUtils;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;

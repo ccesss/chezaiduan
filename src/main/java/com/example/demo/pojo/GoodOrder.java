@@ -87,4 +87,9 @@ public class GoodOrder {
      */
     private LocalDateTime updateTime;
 
+    /**
+     * 订单当前状态
+     */
+    private String state;
+
 }
